@@ -1,0 +1,15 @@
+%logo {
+  @include logo;
+}
+%input {
+  @include box-sizing(border-box);
+  width: 100%;
+  display: block;
+}
+%noUserSelect {
+  @include no-user-select;
+}
+$linkColor: #0879a5;
+%linkColor {
+	color: $linkColor;
+}

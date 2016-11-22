@@ -1,0 +1,69 @@
+@import "_mixin.scss";
+%htmlBody {
+	width: 100%;
+  height: 100%;
+}
+html {
+	@extend %htmlBody;
+	font: $font-main;
+	background: $background-html;
+}
+body {
+	@extend %htmlBody;
+	background: $background-body;
+}
+#main {
+	width: $main-width;
+	min-height: $main-min-height;
+	margin: $main-mar;
+	background: $background-main;
+}
+#wrapper {
+	@include pie-clearfix;
+	@if $site-status == limited {
+		@include wrapper-setting-limited;
+	}
+	background: $background-wrapper;
+	@if $footer-bottom == true {
+		padding-bottom: $footer-height + $content-dist-indent;
+	}
+}
+@if $site-status == full {
+	.wrapper {
+		@include wrapper-setting-full;
+	}
+}
+header {
+	@if $site-status == limited {
+		height: $header-height - ($header-pad-top + $header-pad-bottom);
+		padding: $header-pad-top $header-pad-right $header-pad-bottom $header-pad-left;
+		background: $background-header;
+	}
+	@if $site-status == full {
+		background: $background-header;
+		.wrapper {
+			height: $header-height - ($header-pad-top + $header-pad-bottom);
+			padding-top: $header-pad-top;
+			padding-bottom: $header-pad-bottom;
+		}
+	}
+}
+footer {
+	position: relative;
+	background: $background-footer;
+	@if $site-status == limited {
+		@include footer-setting-limited;
+		height: $footer-height-obs;
+		padding: $footer-pad-top $footer-pad-right $footer-pad-bottom $footer-pad-left;
+	}
+	@if $footer-bottom == true {
+		margin-top: -($footer-height);
+	}
+	@if $site-status == full {
+		.wrapper {
+			height: $footer-height-obs;
+			padding-top: $footer-pad-top;
+			padding-bottom: $footer-pad-bottom;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.raspForNav {
+	height: 59px;
+}
+nav {
+	font-size: 17px;
+	line-height: 50px;
+	padding: 0 70px 9px;
+	text-align: justify;
+	background: url(../images/fon-nav.png) repeat-x left top;
+	ul {
+		display: block;
+		&:after  {
+			content: ' ';
+			width: 100%;
+			display: inline-block;
+		}
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		@extend %linkColor;
+		&:hover {
+			text-decoration: none;
+		}
+		&.active {
+			font-weight: bold;
+			text-decoration: none;
+		}
+	}
+	&.fix {
+		width: 100%;
+		min-width: $wrapper-min-width;
+		max-width: $wrapper-max-width;
+		top: 0;
+		z-index: 10;
+		position: fixed;
+		box-sizing: border-box;
+	}
+}
