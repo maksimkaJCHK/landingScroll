@@ -16,7 +16,7 @@ gulp.task('sass', function () {
         "browsers": ["last 10 versions", "ie 8", "ie 7"],
         "cascade": true
     }))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+    //.pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('project/css'));
 });
 // gulp.task('scripts', function() {

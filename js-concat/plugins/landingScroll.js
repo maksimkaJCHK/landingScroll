@@ -11,6 +11,11 @@
       }
     }, options);
     var mainSelf = this;
+    var forCAI = function() {
+      for(var i=0; i<mainSelf.length; i++) {
+        mainSelf.eq(i).attr('data-type', 'menu');
+      }
+    };
     var findIndent = function() {
       mainSelf.each(function() {
         var self = $(this);
@@ -24,20 +29,17 @@
       mainSelf.each(function() {
         var self = $(this);
         if(scrollW>=(self.attr('data-scroll') - settings.activeIndent)) {
-          $('.'+settings.menuActiveClass).removeClass(settings.menuActiveClass);
+          $('[data-type="menu"].'+settings.menuActiveClass).removeClass(settings.menuActiveClass);
           self.addClass(settings.menuActiveClass);
-        } else {
-          self.removeClass(settings.menuActiveClass);
         }
       })
     };
-    findIndent(self);
+    forCAI();
+    findIndent();
     this.on('click', function(event) {
       var self = $(this);
       var valueScroll = self.attr('data-scroll');
-      $('html, body').animate({'scrollTop': valueScroll}, settings.speed, settings.easing, function() {
-        settings.callback();
-      });
+      $('html, body').animate({'scrollTop': valueScroll}, settings.speed, settings.easing, settings.callback);
       event.preventDefault();
     });
     $(window).on('scroll.landingScroll', showActiveItem);
