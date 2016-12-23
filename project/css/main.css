@@ -166,7 +166,8 @@ th {
   width: 100%; }
 
 nav a, .block h1,
-.block h2 {
+.block h2, .block a, .block b,
+.block strong {
   color: #0879a5; }
 
 html, body {
@@ -247,18 +248,173 @@ nav {
     font-size: 20px;
     line-height: 120%;
     text-align: center;
-    margin: 20px 0; }
+    margin: 20px 0;
+    position: relative; }
+  .block a:hover {
+    text-decoration: none; }
   .block p {
     margin: 20px 0; }
   .block-1 {
     min-height: 500px; }
   .block-2 {
-    min-height: 450px; }
+    min-height: 450px;
+    overflow: hidden; }
   .block-3 {
-    min-height: 300px; }
+    min-height: 340px; }
   .block-4 {
-    min-height: 490px; }
+    min-height: 530px; }
   .block-5 {
     min-height: 100px; }
   .block:last-child {
     border-bottom: none; }
+
+.land {
+  width: 768px;
+  margin: 0 auto;
+  position: relative; }
+
+.block-1 .land:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.block-1 .land img {
+  float: left; }
+
+.block-2 .land .icon-1 {
+  top: 0;
+  left: 60px; }
+
+.block-2 .land .icon-1, .block-2 .land .icon-3 {
+  top: 94px; }
+
+.block-2 .land .icon-2 {
+  left: 50%;
+  z-index: 2;
+  margin-left: -128px; }
+
+.block-2 .land .icon-3 {
+  right: 60px; }
+
+.block-2 .land img {
+  position: absolute; }
+
+.block-3 .land img {
+  float: left; }
+
+.block-4 .land {
+  margin-top: 50px; }
+
+.block-4 .wr-img {
+  position: absolute; }
+  .block-4 .wr-img-1, .block-4 .wr-img-2, .block-4 .wr-img-3 {
+    width: 256px; }
+  .block-4 .wr-img-1 {
+    top: 0;
+    left: 60px; }
+  .block-4 .wr-img-1, .block-4 .wr-img-3 {
+    top: 94px; }
+  .block-4 .wr-img-2 {
+    left: 50%;
+    z-index: 2;
+    margin-left: -128px; }
+  .block-4 .wr-img-3 {
+    right: 60px; }
+
+.animation .block-1 {
+  opacity: 0.2;
+  -webkit-transition: opacity 1s ease-in-out .5s;
+  transition: opacity 1s ease-in-out .5s; }
+  .animation .block-1.activeBlock {
+    opacity: 1; }
+
+.animation .block-2 .land img {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-property: left, right, top, opacity;
+  transition-property: left, right, top, opacity; }
+
+.animation .block-2 .land .icon-1 {
+  left: -1300px; }
+
+.animation .block-2 .land .icon-2 {
+  top: -1300px; }
+
+.animation .block-2 .land .icon-3 {
+  right: -1300px; }
+
+.animation .block-2.activeBlock .land .icon-1 {
+  left: 60px; }
+
+.animation .block-2.activeBlock .land .icon-2 {
+  top: 0; }
+
+.animation .block-2.activeBlock .land .icon-3 {
+  right: 60px; }
+
+.animation .block-3 .land img {
+  opacity: 0.2;
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform; }
+
+.animation .block-3.activeBlock img {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+.animation .block-4 .wr-img {
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-property: left, right, top, -webkit-transform;
+  transition-property: left, right, top, -webkit-transform;
+  transition-property: transform, left, right, top;
+  transition-property: transform, left, right, top, -webkit-transform; }
+  .animation .block-4 .wr-img-1, .animation .block-4 .wr-img-3 {
+    top: 154px; }
+  .animation .block-4 .wr-img-1 {
+    left: -70px;
+    -webkit-transform: rotate(-39deg);
+        -ms-transform: rotate(-39deg);
+            transform: rotate(-39deg); }
+  .animation .block-4 .wr-img-3 {
+    right: -70px;
+    -webkit-transform: rotate(39deg);
+        -ms-transform: rotate(39deg);
+            transform: rotate(39deg); }
+  .animation .block-4 .wr-img-2 {
+    top: -40px; }
+
+.animation .block-4.activeBlock .wr-img-1, .animation .block-4.activeBlock .wr-img-3 {
+  top: 94px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg); }
+
+.animation .block-4.activeBlock .wr-img-1 {
+  left: 60px; }
+
+.animation .block-4.activeBlock .wr-img-3 {
+  right: 60px; }
+
+.animation .block-4.activeBlock .wr-img-2 {
+  top: 0; }

@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var cleanCSS  = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
+var compress = require('gulp-yuicompressor');
 var twig = require('gulp-twig');
 
 gulp.task('sass', function () {
@@ -34,9 +35,12 @@ gulp.task('scriptsLibraries', function() {
 gulp.task('scriptsPlugins', function() {
   gulp.src('js-concat/plugins/landingScroll.js')
     .pipe(concat('landingScroll.js'))
+    .pipe(compress({
+        type: 'js'
+    }))
     .pipe(gulp.dest('project/js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('project/js/min'))
+    //.pipe(uglify())
+    //.pipe(gulp.dest('project/js/min'))
 });
 gulp.task('scriptsMain', function() {
   gulp.src(['js-concat/main-function.js', 'js-concat/main.js'])
@@ -49,7 +53,15 @@ gulp.task('twig', function () {
   .pipe(twig({
     data: {
       title: 'Главная страница',
-      fullFooter: false
+      forAnim: false
+    }
+  }))
+  .pipe(gulp.dest('project/'));
+  gulp.src('twig/animatioon-block.twig')
+  .pipe(twig({
+    data: {
+      title: 'Анимация при прокрутки до нужных блоков',
+      forAnim: true
     }
   }))
   .pipe(gulp.dest('project/'));

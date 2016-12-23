@@ -1,0 +1,104 @@
+.animation {
+  .block-1 {
+    @include opacity(0.2);
+    transition: opacity 1s ease-in-out .5s;
+    &.activeBlock {
+      @include opacity(1);
+    }
+  }
+  .block-2 {
+    .land {
+      img {
+        transition-delay: 0s;
+        transition-duration: .5s;
+        transition-timing-function: ease-in-out;
+        transition-property: left, right, top, opacity;
+      }
+      .icon {
+        &-1 {
+          left: -1300px;
+        }
+        &-2 {
+          top: -1300px;
+        }
+        &-3 {
+          right: -1300px;
+        }
+      }
+    }
+    &.activeBlock {
+      .land {
+        .icon {
+          &-1 {
+            left: 60px;
+          }
+          &-2 {
+            top: 0;
+          }
+          &-3 {
+            right: 60px;
+          }
+        }
+      }
+    }
+  }
+  .block-3 {
+    .land {
+      img {
+        @include opacity(0.2);
+        transform: scale(0.5);
+        transition-delay: 0s;
+        transition-duration: .5s;
+        transition-timing-function: ease-in-out;
+        transition-property: transform, opacity;
+      }
+    }
+    &.activeBlock {
+      img {
+        @include opacity(1);
+        transform: scale(1);
+      }
+    }
+  }
+  .block-4 {
+    .wr-img {
+      transition-delay: .5s;
+      transition-duration: .5s;
+      transition-timing-function: ease-in-out;
+      transition-property: transform, left, right, top;
+      &-1,
+      &-3 {
+        top: 154px;
+      }
+      &-1 {
+        left: -70px;
+        transform: rotate(-39deg);
+      }
+      &-3 {
+        right: -70px;
+        transform: rotate(39deg);
+      }
+      &-2 {
+        top: -40px;
+      }
+    }
+    &.activeBlock {
+      .wr-img {
+        &-1,
+        &-3 {
+          top: 94px;
+          transform: rotate(0deg);
+        }
+        &-1 {
+          left: 60px;
+        }
+        &-3 {
+          right: 60px;
+        }
+        &-2 {
+          top: 0;
+        }
+      }
+    }
+  }
+}

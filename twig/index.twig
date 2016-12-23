@@ -1,4 +1,4 @@
-{% extends 'prepresentation/layout-full.twig' %}
+{% extends 'prepresentation/layout-limited.twig' %}
 
 {% block header %}
 Содержимое блока header
@@ -12,7 +12,7 @@
   <script src="js/jquery.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/jquery.easing.compatibility.js"></script>
-  <script src="js/min/landingScroll.js"></script>
+  <script src="js/landingScroll.js"></script>
   <script src="js/main.js"></script>
 {% endblock script %}
 
@@ -31,24 +31,36 @@
   <article id="block-1" class="block block-1">
     {% import "txt.twig" as myMacros %}
     <h1>Заголовок первого блока</h1>
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
-    {{ myMacros.printProducts('Текст первого блока.') }}
+    {{ myMacros.printProducts('Текст для первого блока. При адаптивном дизайне или "ограниченной резине" очень важно, чтобы расстояние до нужных блоков автоматически пересчитывалось, при большом количестве текста, расстояние будет меняться при сужении монитора.') }}
+    {{ myMacros.printProducts('Текст для первого блока. При адаптивном дизайне или "ограниченной резине" очень важно, чтобы расстояние до нужных блоков автоматически пересчитывалось, при большом количестве текста, расстояние будет меняться при сужении монитора.') }}
+    {{ myMacros.printProducts('Текст для первого блока. При адаптивном дизайне или "ограниченной резине" очень важно, чтобы расстояние до нужных блоков автоматически пересчитывалось, при большом количестве текста, расстояние будет меняться при сужении монитора.') }}
+    {{ myMacros.printProducts('Текст для первого блока. При адаптивном дизайне или "ограниченной резине" очень важно, чтобы расстояние до нужных блоков автоматически пересчитывалось, при большом количестве текста, расстояние будет меняться при сужении монитора.') }}
+    {{ myMacros.printProducts('Текст для первого блока. При адаптивном дизайне или "ограниченной резине" очень важно, чтобы расстояние до нужных блоков автоматически пересчитывалось, при большом количестве текста, расстояние будет меняться при сужении монитора.') }}
+    {{ myMacros.printProducts('Текст для первого блока. При адаптивном дизайне или "ограниченной резине" очень важно, чтобы расстояние до нужных блоков автоматически пересчитывалось, при большом количестве текста, расстояние будет меняться при сужении монитора.') }}
   </article>
   <article id="block-2" class="block block-2">
     <h2>Заголовок второго блока</h2>
+    <div class="land">
+      <img src="images/icon/drupal.png" alt="" class="icon-1">
+      <img src="images/icon/joomla.png" alt="" class="icon-2">
+      <img src="images/icon/wordpress.png" alt="" class="icon-3">
+    </div>
   </article>
   <article id="block-3" class="block block-3">
     <h2>Заголовок третьего блока</h2>
+    <div class="land">
+      <img src="images/icon/drupal.png" alt="" >
+      <img src="images/icon/joomla.png" alt="" >
+      <img src="images/icon/wordpress.png" alt="" >
+    </div>
   </article>
   <article id="block-4" class="block block-4">
     <h2>Заголовок четвертого блока</h2>
+    <div class="land">
+      <img src="images/icon/drupal.png" alt="" class="wr-img wr-img-1">
+      <img src="images/icon/joomla.png" alt="" class="wr-img wr-img-2">
+      <img src="images/icon/wordpress.png" alt="" class="wr-img wr-img-3">
+    </div>
   </article>
   <article id="block-5" class="block block-5">
     <h2>Заголовок пятого блока</h2>

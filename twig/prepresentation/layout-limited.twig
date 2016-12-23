@@ -15,7 +15,7 @@
   <script src="js/html5shiv-printshiv.min.js" type="text/javascript"></script>
   <![endif]-->
 </head>
-<body>
+<body {% if forAnim %}class="animation"{% else %}class="no-animation"{% endif %}>
   <div id="main">
     <div id="wrapper">
       <header>
